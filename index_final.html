@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Maksat Madali — Стендап тур</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root{
+      --blue-light:#8fd3ff;
+      --blue-main:#0a4fd8;
+      --blue-dark:#063a9e;
+      --red-main:#e53935;
+      --red-dark:#c62828;
+      --white:#ffffff;
+      --black:#0f172a;
+    }
+
+    *{ box-sizing:border-box; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; }
+    body{
+      background:linear-gradient(180deg,var(--blue-light),#eaf6ff);
+      color:var(--black);
+    }
+    a{ text-decoration:none; color:inherit; }
+    .container{ width:100%; max-width:1100px; margin:0 auto; padding:20px; }
+
+    /* HERO */
+    .hero{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:40px;
+      padding:60px 0;
+    }
+    .hero-text{ flex:1; min-width:280px; }
+    .hero h1{
+      font-size:56px;
+      font-weight:900;
+      color:var(--blue-main);
+      line-height:1;
+      letter-spacing:-0.5px;
+      text-transform:uppercase;
+    }
+    .hero h2{ margin-top:10px; font-size:22px; font-weight:700; }
+    .hero p{ margin-top:18px; font-size:18px; max-width:520px; line-height:1.5; }
+
+    .hero-img{ flex:1; min-width:280px; text-align:center; }
+    .hero-img img{
+      max-width:100%;
+      border-radius:24px;
+      box-shadow:0 18px 50px rgba(15,23,42,.18);
+    }
+
+    /* ABOUT */
+    .about{
+      background:var(--white);
+      border-radius:24px;
+      padding:40px;
+      margin-bottom:60px;
+      box-shadow:0 14px 40px rgba(15,23,42,.10);
+    }
+    .about h3{ font-size:32px; margin-bottom:15px; color:var(--blue-main); }
+    .about p{ font-size:18px; line-height:1.6; max-width:820px; }
+
+    /* DATES */
+    .dates{ margin-bottom:60px; }
+    .dates h3{ font-size:32px; margin-bottom:30px; color:var(--blue-main); }
+
+    .city-list{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:20px;
+    }
+    .city{
+      background:var(--white);
+      border-radius:20px;
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      box-shadow:0 12px 28px rgba(15,23,42,.10);
+      border:1px solid rgba(15,23,42,.06);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .city:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 34px rgba(15,23,42,.14);
+    }
+
+    .date{
+      display:inline-block;
+      color:var(--white);
+      padding:8px 16px;
+      border-radius:999px;
+      font-weight:800;
+      width:fit-content;
+    }
+    .city.blue .date{ background:var(--blue-main); }
+    .city.red .date{ background:var(--red-main); }
+
+    .city h4{ font-size:22px; }
+
+    .meta{
+      font-size:16px;
+      opacity:.88;
+      line-height:1.5;
+    }
+    .meta small{ display:block; opacity:.95; }
+
+    .btn-ticket{
+      margin-top:auto;
+      text-align:center;
+      padding:14px;
+      border-radius:999px;
+      font-weight:800;
+      color:var(--white);
+      transition:filter .2s ease, transform .2s ease;
+    }
+    .city.blue .btn-ticket{ background:var(--blue-main); }
+    .city.red .btn-ticket{ background:var(--red-main); }
+    .btn-ticket:hover{ filter:brightness(.92); transform:translateY(-1px); }
+
+    /* FOOTER */
+    footer{
+      background:var(--blue-main);
+      color:var(--white);
+      padding:30px 20px;
+      border-radius:24px 24px 0 0;
+    }
+    footer .container{
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      justify-content:space-between;
+      align-items:center;
+    }
+    footer a{ font-weight:800; }
+
+    @media (max-width:768px){
+      .hero h1{ font-size:40px; }
+      .about{ padding:28px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container hero">
+    <div class="hero-text">
+      <h1>MAKSAT MADALI</h1>
+      <h2>Стендап тур</h2>
+      <p>Сольный стендап-концерт. Живой юмор, новые шутки и честные истории.</p>
+    </div>
+
+    <div class="hero-img">
+      <img src="MaxMadali_post_v4.jpg" alt="Maksat Madali" />
+    </div>
+  </div>
+
+  <div class="container about">
+    <h3>О концерте</h3>
+    <p>
+      Maksat Madali — стендап-комик с ярким стилем и честным юмором.
+      В туре — лучший материал и новые шутки без фильтров.
+    </p>
+  </div>
+
+  <div class="container dates" id="dates">
+    <h3>Города и даты</h3>
+
+    <div class="city-list">
+      <div class="city blue">
+        <span class="date">4.04</span>
+        <h4>Бишкек</h4>
+        <div class="meta">
+          <small>2 сеанса</small>
+          <small>Адрес: Байтик Баатыра 32</small>
+        </div>
+        <a class="btn-ticket" target="_blank" href="https://iticket.kg/events/concerts/1-seans-stendap-koncert-maksata-madali/709">1 сеанс</a>
+        <a class="btn-ticket" style="margin-top:8px" target="_blank" href="https://iticket.kg/events/concerts/2-seans-stendap-koncert-maksata-madali/710">2 сеанс</a>
+      </div>
+
+      <div class="city blue">
+        <span class="date">5.04</span>
+        <h4>Алматы</h4>
+        <div class="meta">
+          <small>Централ · 19:15</small>
+          <small>Адрес: Кабанбай батыра 71</small>
+        </div>
+        <a class="btn-ticket" target="_blank" href="https://onvibe.me/kk/event/771">Купить билет</a>
+      </div>
+
+      <div class="city blue">
+        <span class="date">10.04</span>
+        <h4>Астана</h4>
+        <div class="meta">
+          <small>Сольный концерт</small>
+          <small>Адрес: Гейдара Алиева 1</small>
+        </div>
+        <a class="btn-ticket" target="_blank" href="https://ticketon.kz/astana/event/solnyy-kontsert-maksata-madali">Купить билет</a>
+      </div>
+
+      <div class="city red">
+        <span class="date">11.04</span>
+        <h4>Москва</h4>
+        <div class="meta">
+          <small>Still · 21:00</small>
+          <small>Адрес: Покровка 17 строение 5</small>
+        </div>
+        <a class="btn-ticket" target="_blank" href="https://stillstandup.com/afisha/tpost/pi3mfvl3t1-maksat-madali-solnii-kontsert">Купить билет</a>
+      </div>
+
+      <div class="city red">
+        <span class="date">12.04</span>
+        <h4>Санкт-Петербург</h4>
+        <div class="meta">
+          <small>Стендап клуб на Белинского · 21:00</small>
+          <small>Адрес: Белинского 9</small>
+        </div>
+        <a class="btn-ticket" target="_blank" href="https://clck.ru/3RdGaH">Купить билет</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div>© Maksat Madali</div>
+      <div>
+        <a target="_blank" href="https://www.instagram.com/maksatmadali/">Instagram</a> ·
+        <a target="_blank" href="https://www.youtube.com/@maksatmadali">YouTube</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
